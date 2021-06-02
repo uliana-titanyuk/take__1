@@ -15,19 +15,33 @@ CVectRat input(int size) {
 	CVectRat* m = (vecType == 0) ? dynamic_cast<CVectRat*>(new gorCVectRat(size)) : dynamic_cast<CVectRat*>(new vertCVectRat(size));
 	unsigned den;
 	unsigned num;
-	//int num;
-	for (int i = 0; i < size; i++) {
-		cout << "Vvedite " << i + 1 << "-yu koordinatu (chisl i znamen)\t";
-		cin >> num;
-		cin >> den;
-		CRat a(num, den);
-		m->Set_arr(i, a);
+	FILE* ifile = fopen("data.txt", "r");
+	CRat a;
+	int num_;
+	int den_;
+	if (!ifile) {
+		printf("error, no file");
+		return -1;
 	}
-	cout << "Vy vveli vector\t\n\n";
-	m->print();
-	cout << endl;
+	else {
+		int i = -1;
+		m = (CRat*)malloc(size * sizeof(CRat));
+		while (!ifile.eof())
+		{
+			ifile >> num_;
+			ifile >> den_;
+			i += 1;
+			a = CRat(num_, den_);
+			m->Set_arr(i, a);
+		}
 
-	//delete m;
 
-	return *m;
+		cout << "Vy vveli vector\t\n\n";
+		m->print();
+		cout << endl;
+
+		//delete m;
+
+		return *m;
+	}
 };
