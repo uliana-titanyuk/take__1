@@ -1,3 +1,4 @@
+#include <fstream>
 #include "Func.h"
 #include "CRat.h"
 #include "CVectRat.h"
@@ -15,7 +16,8 @@ CVectRat input(int size) {
 	CVectRat* m = (vecType == 0) ? dynamic_cast<CVectRat*>(new gorCVectRat(size)) : dynamic_cast<CVectRat*>(new vertCVectRat(size));
 	unsigned den;
 	unsigned num;
-	FILE* ifile = fopen("data.txt", "r");
+	//FILE* ifile = fopen("data.txt", "r");
+	std::ifstream ifile("data.txt");
 
 	CRat a;
 	int num_;
@@ -26,14 +28,18 @@ CVectRat input(int size) {
 	}
 	else {
 		int i = -1;
-		m : = (CRat*)malloc(size * sizeof(CRat));
+
+		m = (CVectRat*)malloc(sizeof(CVectRat));
+		
 		while (!ifile.eof())
 		{
-			ifile >> num_;
-			ifile >> den_;
+			ifile >> num;
+			ifile >> den;
 			i += 1;
-			a = CRat(num_, den_);
-			m->Set_arr(i, a);
+			a = CRat(num, den);
+			m[0].Set_arr(i, a);
+			cout << "Vy vveli";
+			m[0].print();
 		}
 
 
