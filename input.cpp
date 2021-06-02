@@ -16,6 +16,7 @@ CVectRat input(int size) {
 	unsigned den;
 	unsigned num;
 	FILE* ifile = fopen("data.txt", "r");
+
 	CRat a;
 	int num_;
 	int den_;
@@ -25,7 +26,7 @@ CVectRat input(int size) {
 	}
 	else {
 		int i = -1;
-		m = (CRat*)malloc(size * sizeof(CRat));
+		m : = (CRat*)malloc(size * sizeof(CRat));
 		while (!ifile.eof())
 		{
 			ifile >> num_;
