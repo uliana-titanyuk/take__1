@@ -21,7 +21,7 @@ gorCVectRat operator+(const CVectRat& a, const CVectRat& b) {
 gorCVectRat operator-(const CVectRat& a, const CVectRat& b) {
 	gorCVectRat n(a.size());
 	for (int i = 0; i < n.size(); i++) {
-		n.arr[i] = a.get(i) - b.get(i);
+		n.set_arr[i] = a.get(i) - b.get(i);
 	}
 	return n;
 };
