@@ -38,15 +38,15 @@ int CVectRat::size() const {
 }
 
 
-//void CVectRat::print() const {
-	//cout << "(";
-	//for (int i = 0; i < size_ - 1; i++) {
-	//	arr[i].print();
-	//	cout << "\n";
-	//}
-	//arr[size_ - 1].print();
-	//cout << ")\n";
-//}
+void CVectRat::print() const {
+	cout << "(";
+	for (int i = 0; i < size_ - 1; i++) {
+		arr[i].print();
+		cout << "\n";
+	}
+	arr[size_ - 1].print();
+	cout << ")\n";
+}
 
 void vertCVectRat::print() const {
 	cout << "(";
