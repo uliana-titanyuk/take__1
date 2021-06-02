@@ -5,7 +5,7 @@
 void raschet(void) {
 	int size;
 	cout << "Vvedite dlinu vectora" << endl;
-	cin >> size;
+	cin >> size+1;
 
 	/*CVectRat vect1(size);
 	CVectRat vect2(size);*/
