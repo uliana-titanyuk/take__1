@@ -26,12 +26,13 @@ gorCVectRat operator-(const CVectRat& a, const CVectRat& b) {
 	return n;
 };
 
-CRat operator*(const CVectRat& a, const CVectRat& b) {
-	CRat m;
-	for (int i = 0; i < a.size(); i++) {
-		m = m + a.get(i)*b.get(i);
+CRat CVectRat :: operator*(const CVectRat& b) {
+	CRat a;
+	for (int i = 0; i < size_; i++) {
+		a = a + arr[i] * b.arr[i];
 	}
-	return m;
+	return a;
+};
 };
 int CVectRat::size() const {
 	return size_;
