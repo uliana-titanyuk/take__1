@@ -63,6 +63,8 @@ public:
 	virtual void print() const override;
 
 	friend gorCVectRat operator+(const CVectRat& a, const CVectRat& b);
+	friend gorCVectRat operator-(const CVectRat& a, const CVectRat& b);
+};
 };
 
 class vertCVectRat : public CVectRat {
